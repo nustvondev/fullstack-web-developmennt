@@ -3,3 +3,7 @@ tasks:
       echo 'TODO: build project'
     command: |
       echo 'TODO: start app'
+    
+ports:
+  - port: 3000
+    onOpen: open-browser
