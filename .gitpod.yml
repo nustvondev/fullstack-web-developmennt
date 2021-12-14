@@ -1,8 +1,8 @@
 tasks:
-  - init: |
-      echo 'TODO: build project'
+  - init: npm install
     command: |
-      echo 'TODO: start app'
+      export HMR_HOST=`gp url 3000`
+      npm run dev
     
 ports:
   - port: 3000
