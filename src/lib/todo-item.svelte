@@ -58,7 +58,6 @@
         transition: opacity 0.2s;
         opacity: 1;
     }
-    /* TASK: Waiting for API endpoints are available 
     .done {
     transform: none;
     opacity: 0.4;
@@ -66,12 +65,12 @@
     }
     .done .toggle {
     background-image: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.5 1.5L7.4375 14.5L1.5 8.5909' stroke='%23676778' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    } */
+    }
 </style>
-<div class="todo">
-    <form action="" method="">
-        <input type="hidden" name="done" value="" />
-        <button aria-label="Mark done/not done" class="toggle"></button>
+<div class="todo" class:done={todo.done}>
+    <form action="/todos/{todo.uid}.json?_method=patch" method="post">
+        <input type="hidden" name="done" value="{todo.done ? '' : 'true'}" />
+        <button aria-label="Mark {todo.done ? 'not done' : 'done'}}" class="toggle"></button>
     </form>
     <form action="/todos/{todo.uid}.json?_method=patch" method="post" class="text">
         <input type="text" name="text" value="{todo.text}" />
