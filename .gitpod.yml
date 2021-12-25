@@ -21,3 +21,9 @@ vscode:
   extensions:
     - svelte.svelte-vscode
     - prisma.prisma
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
